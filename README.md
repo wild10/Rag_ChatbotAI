@@ -74,3 +74,23 @@ python main_gpt.py # chatbot con api key chatg-gpt-4.1-mini
 ## Demo
 [![Demo del proyecto](demo_thumbnail.png)](demo.mp4)
 
+## Uso de Herramientas de IA
+
+Durante el desarrollo del prototipo RAG, utilicé **ChatGPT** para apoyar varias tareas técnicas y asegurar calidad en el código:
+
+- **Instalación y ambiente virtual:**  
+  Sugerencias de comandos para crear el entorno Conda e instalar librerías sin conflictos de versiones.
+
+- **Depuración y compatibilidad:**  
+  Identificación de errores, optimización de fragmentos de código y aseguramiento de funcionamiento correcto.
+
+- **Corrección de código:**  
+  Actualización de sintaxis y métodos según versiones recientes de librerías, mejorando legibilidad y estabilidad.
+
+- **Decisiones técnicas:**  
+  Asistencia para integrar **Pinecone** en lugar de FAISS y construir la lógica de recuperación y generación de respuestas.
+
+- **Mejora del prompting:**  
+  ChatGPT ayudó a refinar prompts, incluyendo ejemplos claros para optimizar la generación de respuestas basadas en los documentos.
+
+> **Nota:** Todas las decisiones finales, integraciones y pruebas fueron realizadas por mí, asegurando que el prototipo cumpla con los objetivos del desafío y se ajuste a la base de conocimiento proporcionada.
