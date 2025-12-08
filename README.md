@@ -69,3 +69,7 @@ conda activate llm_env
 python  main.py # chatbot llama3 free online local with ollama
 python main_gpt.py # chatbot con api key chatg-gpt-4.1-mini
 ```
+
+## Demo
+![Demo del proyecto](demo.mp4)
+
