@@ -70,6 +70,7 @@ python  main.py # chatbot llama3 free online local with ollama
 python main_gpt.py # chatbot con api key chatg-gpt-4.1-mini
 ```
 
+
 ## Demo
-![Demo del proyecto](demo.mp4)
+[![Demo del proyecto](demo_thumbnail.png)](demo.mp4)
 
