@@ -93,4 +93,3 @@ Durante el desarrollo del prototipo RAG, utilicé **ChatGPT** para apoyar varias
 - **Mejora del prompting:**  
   ChatGPT ayudó a refinar prompts, incluyendo ejemplos claros para optimizar la generación de respuestas basadas en los documentos.
 
-> **Nota:** Todas las decisiones finales, integraciones y pruebas fueron realizadas por mí, asegurando que el prototipo cumpla con los objetivos del desafío y se ajuste a la base de conocimiento proporcionada.
