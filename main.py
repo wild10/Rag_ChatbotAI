@@ -1,6 +1,6 @@
 #############################################################################
-## Chatbot que recuperar una lista de cvs usando RAG + LLMs
-## version local( read pdfs)
+## Chatbot que recupera información de una lista de PDfs usando RAG + LLMs
+## version local ( lee pdfs desde disco)
 ## author:wildr.10@gmail.com
 #############################################################################
 
@@ -12,10 +12,10 @@ import re
 from pinecone import Pinecone, ServerlessSpec
 from langchain_pinecone import PineconeVectorStore
 
-import fitz #PyMuPDF
+import fitz #PyMuPDF para extraccion de texto
 import gradio as gr 
 
-# from langchain_ollama import OllamaEmbeddings
+# librerias langchain
 from langchain_community.embeddings import OllamaEmbeddings
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -24,11 +24,9 @@ from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOllama 
 
 from langchain.prompts import PromptTemplate
-#from langchain
-
 
 ###---------------------------------------------------------------
-##  Cargar PDFs en la memoria local "data"
+##  Cargar PDFs en la memoria local desde folder "data"
 ###---------------------------------------------------------------
 
 def load_pdfs_from_folder(folder_path = "./data"):
@@ -48,8 +46,7 @@ def load_pdfs_from_folder(folder_path = "./data"):
     
     return texts 
 
-
-# Load local PDFs
+# Carga (local) PDFs
 folder_name = "./data"
 pdf_texts = load_pdfs_from_folder(folder_name)
 
@@ -61,7 +58,7 @@ pdf_texts = load_pdfs_from_folder(folder_name)
 ###---------------------------------------------------------------
 
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size = 500, # Num characters : 300-800
+    chunk_size = 500, # Num characters : 300-800 (tamaño chunks)
     chunk_overlap = 100, # existe overlaping para no perder conexto
     length_function = len,
     is_separator_regex = False,
@@ -108,7 +105,7 @@ except Exception as e:
     index = pc.Index(index_name)
     print(f"Índice '{index_name}' creado y conectado.")
 
-# Initialize vector store and add documents
+# Initialize vector store y agregar los textos(pdfs)
 index = pc.Index(index_name)
 vector_store = PineconeVectorStore(index=index, embedding=spanish_embed)
 vector_store.add_documents(documents=splitted_documents)
@@ -154,7 +151,7 @@ qa = RetrievalQA.from_chain_type(
 )
 
 def chat_with_llm(message, history):
-    # ❗ No mezclar prompt + query
+    # respusta del modelo RAG
     result = qa.invoke({"query": message})
     clean_response = re.sub(r'<think>.*?</think>', '', result['result'], flags=re.DOTALL).strip()
 
