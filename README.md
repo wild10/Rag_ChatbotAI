@@ -1,5 +1,7 @@
 
-# Chatbot RAG con Pinecone, LangChain y Ollama, llma
+# Agente Chatbot usando RAG 
+
+### Pinecone, LangChain y Ollama, LLMs
 
 Este proyecto implementa un **chatbot basado en RAG (Retrieval-Augmented Generation)**, que combina **documentos PDF** con un modelo de lenguaje para responder consultas de manera contextualizada. Utiliza **Pinecone** como vector store(escalable y cloud free) y **Ollama** como modelo de embeddings y LLM base se usa **LLAMA3** y alternativamente **gpt-4.1-mini**
 
