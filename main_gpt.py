@@ -131,8 +131,7 @@ retriever = vector_store.as_retriever(search_type="similarity")
 # llm = ChatOllama(model="llama3")
 
 # setup LLM : GPT
-# OPENAI_API_KEY = "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"
-
+# OPENAI_API_KEY = ""
 
 llm = ChatOpenAI(
     model_name="gpt-4.1-mini",
